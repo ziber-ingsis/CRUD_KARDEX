@@ -1,4 +1,4 @@
-{% include "../header.html" %}
+{% include "header.html" %}
 
 <h2 class="mb-3">Listado de personas</h2>
 <a href="/personas/create" class="btn btn-success mb-3">Nuevo</a>
@@ -8,7 +8,7 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Teléfono</th>
+            <th>Telefono</th>
             <th>Fecha nac</th>
             <th></th>
         </tr>
@@ -22,7 +22,7 @@
             <td>{{ p.fecha_nacimiento }}</td>
             <td>
                 <a href="/personas/edit/{{p.id}}" class="btn btn-warning">Editar</a>
-                <a href="/personas/delete/{{p.id}}" class="btn btn-danger"
+                <a href="/personas/delete/{{p.id}}" class="btn btn-danger ms-1"
                    onclick="return confirm('¿Está seguro???')">Eliminar</a>
             </td>
         </tr>
@@ -30,4 +30,4 @@
     </tbody>
 </table>
 
-{% include "../footer.html" %}
+{% include "footer.html" %}

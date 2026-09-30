@@ -1,24 +1,28 @@
-{% include "../header.html" %}
+{% include "header.html" %}
 
-<h2 class="mb-3">Nueva Persona</h2>
-<form action="/personas/store" method="POST" class="card p-4">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input type="text" name="nombre" class="form-control" required>
+<div class="card mx-auto" style="max-width: 450px;">
+    <div class="card-header">Nuevo registro</div>
+    <div class="card-body">
+        <form action="/personas/store" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input type="text" name="apellido" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input type="text" name="telefono" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha nac</label>
+                <input type="date" name="fecha_nacimiento" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Apellido</label>
-        <input type="text" name="apellido" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Teléfono</label>
-        <input type="text" name="telefono" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Fecha de Nacimiento</label>
-        <input type="date" name="fecha_nacimiento" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+</div>
 
-{% include "../footer.html" %}
+{% include "footer.html" %}
