@@ -1,0 +1,31 @@
+{% include "header.html" %}
+
+<h2 class="mb-3">Listado de Unidades</h2>
+<a href="/unidades/create" class="btn btn-success mb-3">Nuevo</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Sigla</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in unidades %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nombre }}</td>
+            <td>{{ u.sigla }}</td>
+            <td>
+                <a href="/unidades/edit/{{u.id}}" class="btn btn-warning">Editar</a>
+                <a href="/unidades/delete/{{u.id}}" class="btn btn-danger ms-1"
+                   onclick="return confirm('¿Está seguro???')">Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include "footer.html" %}

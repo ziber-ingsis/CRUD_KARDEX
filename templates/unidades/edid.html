@@ -1,0 +1,21 @@
+{% include "header.html" %}
+
+<div class="card mx-auto" style="max-width: 450px;">
+    <div class="card-header">Editar Unidad</div>
+    <div class="card-body">
+        <form action="/unidades/update" method="POST">
+            <input type="hidden" name="id" value="{{ unidad.id }}">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control" value="{{ unidad.nombre }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sigla</label>
+                <input type="text" name="sigla" class="form-control" value="{{ unidad.sigla }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</div>
+
+{% include "footer.html" %}
