@@ -1,0 +1,21 @@
+{% include "header.html" %}
+
+<div class="card mx-auto" style="max-width: 450px;">
+    <div class="card-header">Editar Categoría</div>
+    <div class="card-body">
+        <form action="/categorias/update" method="POST">
+            <input type="hidden" name="id" value="{{ categoria.id }}">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control" value="{{ categoria.nombre }}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <textarea name="descripcion" class="form-control" rows="3">{{ categoria.descripcion }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+</div>
+
+{% include "footer.html" %}
